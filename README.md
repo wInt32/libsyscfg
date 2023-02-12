@@ -15,10 +15,11 @@ They are documented in the syscfg.h header.
 
 ## Modules
 
-Modules are a key feature of libsyscfg. The idea is to have multiple different implementations for the API, but link to a single library.
+Modules are a key feature of libsyscfg. The idea is to have multiple different implementations for the API, but link to a single library.  
+NOTE: due to the nature of modules, static linking is not officialy supported.
 
 ## Building
-It should be as simple as running `make`, the resulting binaries are in `bin`, headers in `include` and shared libraries in `lib`. NOTE: due to the nature of modules, static linking is not officialy supported.
+It should be as simple as running `make`, the resulting binaries are in `bin`, headers in `include` and shared libraries in `lib`.  
 To do something actually useful, change `SYSCFG_MODULE_PATH` and `SYSCFG_M_SIMPLE_CFG_PATH` to a path of your liking (e.g. `/lib/syscfg/modules/simple.so` and `/etc/cfg/`)
 
 ## Issues
