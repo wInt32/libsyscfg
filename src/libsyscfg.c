@@ -10,7 +10,7 @@ char **syscfg_list(const char *key) {
         return NULL;
 
     // get a pointer to the syscfg_list function
-    char **(*_syscfg_list)(const char *) = dlsym(so_handle, "syscfg_list");
+    char **(*_syscfg_list)(const char *) = dlsym(so_handle, "m_syscfg_list");
 
     // run the function
     char **result = (*_syscfg_list)(key);
@@ -27,7 +27,7 @@ size_t syscfg_get(const char *key, const char *opt, char **val_ptr) {
         return 0;
 
     // get a pointer to the syscfg_get function
-    size_t (*_syscfg_get)(const char *, const char *, char *const *) = dlsym(so_handle, "syscfg_get");
+    size_t (*_syscfg_get)(const char *, const char *, char *const *) = dlsym(so_handle, "m_syscfg_get");
 
     // run the function
     size_t result = (*_syscfg_get)(key, opt, val_ptr);
@@ -44,7 +44,7 @@ size_t syscfg_set(const char *key, const char *opt, char *str) {
         return -1;
 
     // get a pointer to the syscfg_set function
-    size_t (*_syscfg_set)(const char *, const char *, char *) = dlsym(so_handle, "syscfg_set");
+    size_t (*_syscfg_set)(const char *, const char *, char *) = dlsym(so_handle, "m_syscfg_set");
 
     // run the function
     size_t result = (*_syscfg_set)(key, opt, str);

@@ -61,7 +61,7 @@ char *_resolve_opt_path(const char *key, const char *opt){
 }
 
 // lists the keys/opts for key
-char **syscfg_list(const char *key) {
+char **m_syscfg_list(const char *key) {
 
     // get the real key path and open the key
     char *key_path = _resolve_key_path(key);
@@ -120,7 +120,7 @@ char **syscfg_list(const char *key) {
 }
 
 // get value of opt in key to char *val pointed to by val_ptr
-size_t syscfg_get(const char *key, const char *opt, char **val_ptr) {
+size_t m_syscfg_get(const char *key, const char *opt, char **val_ptr) {
 
     // get the real opt path and open the file for reading
     char *opt_path = _resolve_opt_path(key, opt);
@@ -147,7 +147,7 @@ size_t syscfg_get(const char *key, const char *opt, char **val_ptr) {
 }
 
 // write str to opt in key
-size_t syscfg_set(const char *key, const char *opt, char *str) {
+size_t m_syscfg_set(const char *key, const char *opt, char *str) {
     // get the real opt path and open the file for writing
     char *opt_path = _resolve_opt_path(key, opt);
     FILE *opt_file = fopen(opt_path, "w");
